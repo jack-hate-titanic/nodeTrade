@@ -9,7 +9,7 @@
 // src/server/mysql/index.ts
 import { Models } from '../../common/typings/model'
 import pool from './pool'
-import { DataBaseFailed } from '../../core/HttpException'
+import { DataBaseFailed } from '../HttpException'
 import { lineToHumpObject } from '../../common/utils/utils'
 import mysql from 'mysql'
 

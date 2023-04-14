@@ -2,13 +2,14 @@
  * @Author: 悦者生存 1002783067@qq.com
  * @Date: 2023-02-25 19:34:42
  * @LastEditors: 悦者生存 1002783067@qq.com
- * @LastEditTime: 2023-02-26 20:26:47
+ * @LastEditTime: 2023-04-14 22:19:30
  * @FilePath: /koa2-ts-template/src/common/utils/utils.ts
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
 import fs from 'fs'
 import path from 'path'
 import { format } from './date'
+const csv = require('csv-parser');
 /**
  * 获取某个目录下所有文件的默认导出
  * @param filePath 需要遍历的文件路径
@@ -113,3 +114,16 @@ export function humpToLineObject(obj: Object) {
   }
 }
 
+// 读取数据
+export const readCsvData = (fileName: string) => {
+  const result: any[] = [];
+  return new Promise((resolve) => {
+    fs.createReadStream(`/Users/wson/Desktop/Trader/data/${fileName}`)
+    .pipe(csv())
+    .on('data', (data: any) => result.push(data))
+    .on('end', () => {
+      resolve(result);
+    });
+  })
+ 
+}

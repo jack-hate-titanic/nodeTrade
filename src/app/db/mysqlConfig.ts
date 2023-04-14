@@ -1,5 +1,5 @@
 // src/server/mysql/mysqlConfing.ts
-import Config from '../../config/Config'
+import Config from '../../config/config.default'
 
 export default {
   host: Config.MYSQL.HOST,
