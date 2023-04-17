@@ -2,7 +2,7 @@
  * @Author: 悦者生存 1002783067@qq.com
  * @Date: 2023-02-25 19:38:25
  * @LastEditors: 悦者生存 1002783067@qq.com
- * @LastEditTime: 2023-04-14 22:09:28
+ * @LastEditTime: 2023-04-17 21:05:58
  * @FilePath: /koa2-ts-template/src/config/config.ts
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -18,7 +18,7 @@ export default class Config {
   public static readonly BASE = isDev ? 'src' : 'dist/src';
   // mysql配置
   public static readonly MYSQL = {
-    DB_NAME: 'admin',
+    DB_NAME: 'stock',
     HOST: '127.0.0.1',
     PORT: 3306,
     USER_NAME: 'root',

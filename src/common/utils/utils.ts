@@ -2,11 +2,11 @@
  * @Author: 悦者生存 1002783067@qq.com
  * @Date: 2023-02-25 19:34:42
  * @LastEditors: 悦者生存 1002783067@qq.com
- * @LastEditTime: 2023-04-15 13:08:32
+ * @LastEditTime: 2023-04-15 13:47:13
  * @FilePath: /koa2-ts-template/src/common/utils/utils.ts
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
-import fs from 'fs'
+import fs from 'fs-extra'
 import path from 'path'
 import { format } from './date'
 const csv = require('csv-parser');
@@ -120,7 +120,10 @@ export const readCsvData = (fileName: string) => {
   return new Promise((resolve) => {
     const file = `/Users/wson/Desktop/Trader/data/${fileName}`;
     // 判断文件是否存在
-    if (!fs.existsSync(file)) return;
+    if (!fs.existsSync(file)) {
+      console.log(file)
+      resolve([])
+    };
     fs.createReadStream(file)
     .pipe(csv())
     .on('data', (data: any) => result.push(data))

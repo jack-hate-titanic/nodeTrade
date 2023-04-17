@@ -26,6 +26,7 @@
     "mysql": "^2.18.1"
   },
   "devDependencies": {
+    "@types/fs-extra": "^11.0.1",
     "@types/koa": "^2.13.5",
     "@types/koa-bodyparser": "^4.3.10",
     "@types/koa-router": "^7.4.4",

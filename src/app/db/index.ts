@@ -2,7 +2,7 @@
  * @Author: 悦者生存 1002783067@qq.com
  * @Date: 2023-02-26 19:05:55
  * @LastEditors: 悦者生存 1002783067@qq.com
- * @LastEditTime: 2023-02-28 20:46:06
+ * @LastEditTime: 2023-04-17 22:36:22
  * @FilePath: /koa2-ts-template/src/server/mysql/index.ts
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -22,6 +22,7 @@ export async function command(command: string, value?: Array<any>): Promise<Mode
   try {
     return new Promise<Models.Result>((resolve, reject: (error: Models.MysqlError) => void) => {
       pool.getConnection((error: mysql.MysqlError, connection: mysql.PoolConnection) => {
+       
         // 如果连接出错, 抛出错误
         if (error) {
           const result: Models.MysqlError = {
@@ -32,6 +33,7 @@ export async function command(command: string, value?: Array<any>): Promise<Mode
         }
 
         const callback: mysql.queryCallback = (err, results?: any, fields?: mysql.FieldInfo[]) => {
+          console.log(err);
           connection.release()
           if (err) {
             const result: Models.MysqlError = {
@@ -45,7 +47,7 @@ export async function command(command: string, value?: Array<any>): Promise<Mode
               msg: 'ok',
               state: 1,
               // 将数据库里的字段, 由下划线更改为小驼峰
-              results: results instanceof Array ? results.map(lineToHumpObject) : results,
+              results: results,
               fields: fields || [],
             }
             resolve(result)
