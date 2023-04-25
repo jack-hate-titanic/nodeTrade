@@ -1,3 +1,5 @@
+import Config from "../../config/config.default"
+
 const nodemailer = require('nodemailer')
 
 //创建一个SMTP客户端配置对象
@@ -8,7 +10,7 @@ const transporter = nodemailer.createTransport({
         // 发件人邮箱账号
         user: '1002783067@qq.com',
         //发件人邮箱的授权码 需要在自己的邮箱设置中生成,并不是邮件的登录密码
-        pass: 'nekjujpyzdrabcdg'
+        pass: Config.MAIL_CODE
     }
 })
 
