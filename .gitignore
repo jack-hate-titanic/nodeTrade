@@ -1,2 +1,2 @@
 node_modules
-config/config.default.ts
+src/config/config.default.ts
