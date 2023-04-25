@@ -1,4 +1,4 @@
-import Config from "../../config/config.default"
+import Config from "../../config.default"
 
 const nodemailer = require('nodemailer')
 

@@ -10,7 +10,7 @@ import KoaRouter from 'koa-router';
 import { Models } from '../../common/typings/model'
 import { StockType } from '../../common/interface/stock';
 import { addStockToMonitor, getStocks, updateStocks, deleteStockByCode } from '../../service/monitor/monitor';
-import Config from '../../config/config.default';
+import Config from '../../config.default';
 
 
 const router = new KoaRouter({

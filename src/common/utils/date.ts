@@ -8,7 +8,7 @@
  */
 // src/common/utils/date.ts
 import moment from 'moment'
-import Config from '../../config/config.default'
+import Config from '../../config.default'
 
 /**
  * 格式化时间

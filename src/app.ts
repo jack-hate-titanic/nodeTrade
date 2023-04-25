@@ -8,7 +8,7 @@
  */
 import Koa from 'koa';
 import initCore from './app/Init';
-import Config from './config/config.default';
+import Config from './config.default';
 
 
 // 创建app实例

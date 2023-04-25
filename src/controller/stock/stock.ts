@@ -10,7 +10,7 @@ import KoaRouter from 'koa-router';
 import { Models } from '../../common/typings/model'
 import { readCsvData } from '../../common/utils/utils';
 import { getStocksByMA } from '../../service/stock/stock';
-import Config from '../../config/config.default';
+import Config from '../../config.default';
 
 
 const router = new KoaRouter({

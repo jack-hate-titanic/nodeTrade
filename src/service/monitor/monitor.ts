@@ -104,11 +104,6 @@ export async function sellStock(stock: StockType) {
     
 }
 
-const a = {"code":200,"data":[{"code":"000029","name":"深深房Ａ","date":"2023-04-23T16:00:00.000Z","close":10.81,"close_pct":-2.61,"profit":-8.85,"init_price":11.86, 'ma_5': 3, 'ma_10':4 , 'ma_20': 3},{"code":"000607","name":"华媒控股","date":"2023-04-23T16:00:00.000Z","close":5.78,"close_pct":3.96,"profit":-3.18,"init_price":5.97,'ma_5': 3, 'ma_10':3, 'ma_20': 3}],"success":true}
-a.data.forEach((stock:any) => {
-  return sellStock(stock);
-})
-
 // 根据code删除股票
 export async function deleteStockByCode(code: string) {
   const result = await command(`delete from stock where code='${code}'`);
