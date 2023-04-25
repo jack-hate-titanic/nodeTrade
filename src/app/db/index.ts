@@ -2,7 +2,7 @@
  * @Author: 悦者生存 1002783067@qq.com
  * @Date: 2023-02-26 19:05:55
  * @LastEditors: 悦者生存 1002783067@qq.com
- * @LastEditTime: 2023-04-17 22:36:22
+ * @LastEditTime: 2023-04-18 22:19:24
  * @FilePath: /koa2-ts-template/src/server/mysql/index.ts
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -10,7 +10,6 @@
 import { Models } from '../../common/typings/model'
 import pool from './pool'
 import { DataBaseFailed } from '../HttpException'
-import { lineToHumpObject } from '../../common/utils/utils'
 import mysql from 'mysql'
 
 /*
