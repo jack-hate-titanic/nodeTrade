@@ -2,7 +2,7 @@
  * @Author: 悦者生存 1002783067@qq.com
  * @Date: 2023-02-25 19:34:42
  * @LastEditors: 悦者生存 1002783067@qq.com
- * @LastEditTime: 2023-04-25 21:57:22
+ * @LastEditTime: 2023-05-02 19:55:06
  * @FilePath: /koa2-ts-template/src/common/utils/utils.ts
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -118,7 +118,7 @@ export function humpToLineObject(obj: Object) {
 export function calculateProfit(close: number, init_price: number) {
   // 计算收益率  (市价-成本价)/成本价
   return Number(Number((close - init_price) / init_price).toFixed(4)) * 10000 / 100;
-}
+} 
 
 // 读取数据
 export const readCsvData = (fileName: string) => {

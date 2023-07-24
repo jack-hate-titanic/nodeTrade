@@ -16,7 +16,7 @@ const transporter = nodemailer.createTransport({
 
 
 
-export const sendMail = (code: string, signal: string) => {
+export const sendMail = (html: string) => {
   // 配置收件人信息
   const receiver = {
     // 发件人 邮箱  '昵称<发件人邮箱>'
@@ -26,13 +26,7 @@ export const sendMail = (code: string, signal: string) => {
     // 收件人 的邮箱 可以是其他邮箱 不一定是qq邮箱
     to: '1002783067@qq.com',
     // 可以使用html标签
-    html: `
-    <h4>代码: 
-      <span style="color: red">${code}</span>
-    </h4>
-    <h4>操作: 卖出</h4>
-    <h4>触发信号: ${signal}</h4>
-  `
+    html
   }
   // 发送邮件 
   transporter.sendMail(receiver, (error:string, info: any) => {
